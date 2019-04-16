@@ -1,52 +1,64 @@
 {
-
   "manifest_version": 2,
-  "name": "GitLab Markdown Viewer",
-  "version": "1.2.5",
-  "description": "Renders markdown files in GitLab style.",
-
+  "name": "Markdown Viewer",
+  "version": "0.0.19",
+  "description": "Renders markdown files in Firefox.",
   "icons": {
-    "16": "icons/16x16.png",
-    "48": "icons/48x48.png",
-    "128": "icons/128x128.png"
+    "16": "assets/icons/16.png",
+    "48": "assets/icons/48.png",
+    "128": "assets/icons/128.png"
   },
-
+  "options_ui": {
+    "page": "component/settings.html",
+    "browser_style": true
+  },
+  "permissions": [
+    "storage"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "{32c23590-0e7e-484c-9788-1236fc0524e2}"
+    }
+  },
   "content_scripts": [
     {
-      "matches": ["file:///*.md", "file:///*.markdown"],
-      "js": ["js/markdown-it.min.js",
-             "js/markdown-it-html5-embed.js",
-             "js/highlight.pack.min.js",
-             "js/katex.min.js",
-             "js/texmath.js",
-             "js/main.js"
-             ]
+      "matches": [
+        "file:///*.md",
+        "file:///*.markdown"
+      ],
+      "js": [
+        "vendor/markdown-it/markdown-it.js",
+        "vendor/markdown-it/markdown-it-html5-embed.js",
+        "vendor/highlight/highlight.pack.min.js",
+        "vendor/katex/katex.js",
+        "vendor/texmath/texmath.js",
+        "main.js"
+      ]
     }
   ],
-
   "web_accessible_resources": [
-    "css/gitlab.css",
-    "css/highlight.css",
-    "css/katex.min.css",
-    "css/fonts/KaTeX_AMS-Regular.woff2",
-    "css/fonts/KaTeX_Caligraphic-Bold.woff2",
-    "css/fonts/KaTeX_Caligraphic-Regular.woff2",
-    "css/fonts/KaTeX_Fraktur-Bold.woff2",
-    "css/fonts/KaTeX_Fraktur-Regular.woff2",
-    "css/fonts/KaTeX_Main-Bold.woff2",
-    "css/fonts/KaTeX_Main-BoldItalic.woff2",
-    "css/fonts/KaTeX_Main-Italic.woff2",
-    "css/fonts/KaTeX_Main-Regular.woff2",
-    "css/fonts/KaTeX_Math-Italic.woff2",
-    "css/fonts/KaTeX_SansSerif-Bold.woff2",
-    "css/fonts/KaTeX_SansSerif-Italic.woff2",
-    "css/fonts/KaTeX_SansSerif-Regular.woff2",
-    "css/fonts/KaTeX_Script-Regular.woff2",
-    "css/fonts/KaTeX_Size1-Regular.woff2",
-    "css/fonts/KaTeX_Size2-Regular.woff2",
-    "css/fonts/KaTeX_Size3-Regular.woff2",
-    "css/fonts/KaTeX_Size4-Regular.woff2",
-    "css/fonts/KaTeX_Typewriter-Regular.woff2"
+    "assets/style/gitlab.css",
+    "vendor/highlight/highlight.css",
+    "vendor/katex/katex.css",
+    "vendor/katex/fonts/KaTeX_AMS-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2",
+    "vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Fraktur-Bold.woff2",
+    "vendor/katex/fonts/KaTeX_Fraktur-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Main-Bold.woff2",
+    "vendor/katex/fonts/KaTeX_Main-BoldItalic.woff2",
+    "vendor/katex/fonts/KaTeX_Main-Italic.woff2",
+    "vendor/katex/fonts/KaTeX_Main-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Math-BoldItalic.woff2",
+    "vendor/katex/fonts/KaTeX_Math-Italic.woff2",
+    "vendor/katex/fonts/KaTeX_SansSerif-Bold.woff2",
+    "vendor/katex/fonts/KaTeX_SansSerif-Italic.woff2",
+    "vendor/katex/fonts/KaTeX_SansSerif-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Script-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Size1-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Size2-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Size3-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Size4-Regular.woff2",
+    "vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2"
   ]
-
 }
