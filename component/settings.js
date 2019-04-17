@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   browser.storage.local.get().then(
-    result => {
-      document.querySelector('#fontSize').value =
-        typeof result.fontSize === "undefined" ? "16" : result.fontSize;
-        typeof result.contentFontFamily === "undefined" ? "'Microsoft Yahei', Helvetica, Arial, sans-serif" : result.contentFontFamily;
-        typeof result.codeFontFamily === "undefined" ? "'Menlo', 'Liberation Mono', 'Consolas', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', 'andale mono', 'lucida console', monospace" : result.codeFontFamily;
+    (result) => {
+      document.querySelector('#fontSize').value = typeof result.fontSize === "undefined" ? "16" : result.fontSize;
+      document.querySelector('#contentFontFamily').value = typeof result.contentFontFamily === "undefined" ? "'Microsoft Yahei', Helvetica, Arial, sans-serif" : result.contentFontFamily;
+      document.querySelector('#codeFontFamily').value = typeof result.codeFontFamily === "undefined" ? "'Menlo', 'Liberation Mono', 'Consolas', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', 'andale mono', 'lucida console', monospace" : result.codeFontFamily;
     },
     error => console.log(`Error: ${error}`)
   );
