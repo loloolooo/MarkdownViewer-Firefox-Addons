@@ -110,14 +110,20 @@ client.send();
 
 async function main () {
 	try {
+		// settings.js
+		const fontSizeDefault = "16px";
+		const contentFontFamilyDefault = "'Microsoft Yahei', Helvetica, Arial, sans-serif";
+		const codeFontFamilyDefault = "'Roboto Mono', 'Menlo', 'Liberation Mono', 'Consolas', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', 'andale mono', 'lucida console', monospace"
+		const contentWidthDefault = '680px;'
 		// Settings
 		let options = await browser.storage.local.get()
-		options.fontSize = typeof options.fontSize === 'undefined' ? '16px' : options.fontSize + 'px'
-		options.contentFontFamily = typeof options.contentFontFamily === "undefined" ? "'Microsoft Yahei', Helvetica, Arial, sans-serif" : options.contentFontFamily
-		options.codeFontFamily = typeof options.codeFontFamily === "undefined" ? "'Menlo', 'Liberation Mono', 'Consolas', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', 'andale mono', 'lucida console', monospace" : options.codeFontFamily
+		options.fontSize = typeof options.fontSize === 'undefined' ? fontSizeDefault : options.fontSize + 'px'
+		options.contentFontFamily = typeof options.contentFontFamily === "undefined" ? contentFontFamilyDefault : options.contentFontFamily
+		options.codeFontFamily = typeof options.codeFontFamily === "undefined" ? codeFontFamilyDefault : options.codeFontFamily
+		options.contentWidth = typeof options.contentWidth === "undefined" ? contentWidthDefault : options.contentWidth
 
 		let style = `
-		body { font-size: ${options.fontSize}; font-family: ${options.contentFontFamily} }
+		body { font-size: ${options.fontSize}; font-family: ${options.contentFontFamily}; width: ${options.contentWidth}; margin-right: auto; margin-left: auto; }
 		code,kbd,pre,samp { font-family: ${options.codeFontFamily} }
 		`
 		let head = document.head || document.getElementsByTagName('head')[0]

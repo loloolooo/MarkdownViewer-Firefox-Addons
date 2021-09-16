@@ -1,21 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <style>
-        .section { display: flex; margin-bottom: 5px; }
-        .label { min-width: 150px; text-align: right; margin-right: 5px; }
-        .submit { margin-left: 10px; }
-        .number { width: 120px; }
-        .text { min-width: 398px; }
+      .section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      .label {
+        min-width: 160px;
+        text-align: right;
+        margin-right: 5px;
+      }
+      .number {
+        width: 120px;
+      }
+      .text {
+        min-width: 398px;
+      }
     </style>
-</head>
-<body>
-<form class='form'>
-   <section class="section"><label class="label" for="fontSize">Font size: </label> <input class="number" type="number" name="fontSize" id="fontSize" min="9" max="72"></section>
-   <section class="section"><label class="label" for="contentFontFamily">Content font-family: </label> <input class="text" type="text" name="contentFontFamily" id="contentFontFamily"></section>
-   <section class="section"><label class="label" for="codeFontFamily">Code font-family: </label> <input class="text" type="text" name="codeFontFamily" id="codeFontFamily"><button class="submit" type="submit" id="save">Save</button></section>
-</form>
-<script src="settings.js"></script>
-</body>
+  </head>
+  <body>
+    <form class="form">
+      <section class="section">
+        <label class="label" for="fontSize">Font size: </label>
+        <input
+          class="number"
+          type="number"
+          name="fontSize"
+          id="fontSize"
+          min="9"
+          max="72"
+        /> (px)
+      </section>
+      <section class="section">
+        <label class="label" for="contentFontFamily">
+          Content font-family:
+        </label>
+        <input
+          class="text"
+          type="text"
+          name="contentFontFamily"
+          id="contentFontFamily"
+        />
+      </section>
+      <section class="section">
+        <label class="label" for="codeFontFamily">Code font-family: </label>
+        <input
+          class="text"
+          type="text"
+          name="codeFontFamily"
+          id="codeFontFamily"
+        />
+      </section>
+      <section class="section">
+        <label class="label" for="contentWidth"> Width: </label>
+        <input class="text" type="text" name="contentWidth" id="contentWidth" placeholder="medium.com: 680px" />
+      </section>
+      <section class="section">
+        <label class="label"></label>
+        <button class="submit" type="submit" id="save">Save</button>
+      </section>
+    </form>
+    <script src="settings.js"></script>
+  </body>
 </html>
